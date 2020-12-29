@@ -1,11 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
 
 export default function Header() {
   return (
     <header className="header">
       <div className="container">
         <div className="site">
-          <a href="base-index.html">
+          <Link to={`/`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="225.65"
@@ -14,15 +15,15 @@ export default function Header() {
               <defs></defs> <desc>ESSENTIALS</desc>{" "}
               <path fill="#477294" d="M52.6 25.36h8...2.33-2.33z" />
             </svg>
-          </a>
+          </Link>
         </div>
         <nav className="nav">
           <ul>
             <li>
-              <a href="base-index.html">TOP</a>
+              <Link to={`/`}>TOP</Link>
             </li>
             <li>
-              <a href="base-about.html">ABOUT</a>
+              <Link to={`/about/`}>ABOUT</Link>
             </li>
           </ul>
         </nav>

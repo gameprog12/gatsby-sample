@@ -1,6 +1,13 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faTwitter,
+  faFacebookSquare,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons"
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
@@ -19,7 +26,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="site">
-          <a href="base-index.html">
+          <Link to={`/`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="225.65"
@@ -29,24 +36,24 @@ export default function Footer() {
               <path fill="#fff" d="M52.6 25.36h8...2.33-2.33z" />
             </svg>
             <p>おいしい食材と食事を探求するサイト</p>
-          </a>
+          </Link>
         </div>
         <ul className="sns">
           <li>
             <a href="https://twitter.com/">
-              <i className="fab fa-twitter" />
+              <FontAwesomeIcon icon={faTwitter} />
               <span className="sr-only">Twitter</span>
             </a>
           </li>
           <li>
             <a href="https://facebook.com/">
-              <i className="fab fa-facebook-square" />
+              <FontAwesomeIcon icon={faFacebookSquare} />
               <span className="sr-only">Facebook</span>
             </a>
           </li>
           <li>
             <a href="http://instagram.com/">
-              <i className="fab fa-instagram" />
+              <FontAwesomeIcon icon={faInstagram} />
               <span className="sr-only">Instagram</span>
             </a>
           </li>

@@ -4,11 +4,20 @@ import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUtensils, faCheckSquare } from "@fortawesome/free-solid-svg-icons"
 
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-export default function Home({ data }) {
+export default function Home({ data, location }) {
   return (
     <Layout>
+      <SEO
+        pagetitle="ESSENTIALS について "
+        pagedesc=" 食べ物についての情報を発信しているサイトです。"
+        pagepath={location.pathname}
+        pageimg={data.about.childImageSharp.original.src}
+        pageimgw={data.about.childImageSharp.original.width}
+        pageimgh={data.about.childImageSharp.original.height}
+      />
       <div className="eyecatch">
         {" "}
         <figure>
@@ -77,6 +86,11 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 320) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+        original {
+          height
+          src
+          width
         }
       }
     }
